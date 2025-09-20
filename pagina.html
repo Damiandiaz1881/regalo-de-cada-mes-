@@ -1,0 +1,87 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carta de Amor – Nuestro Mesiversario</title>
+  <meta name="description" content="Una carta de amor interactiva y romántica para celebrar nuestro mesiversario." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="diseño.css">
+</head>
+<body>
+  <!-- Corazones flotantes -->
+  <div class="hearts" id="hearts"></div>
+
+  <header>
+    <div class="badge">💌 Mesiversario • <span id="count"></span></div>
+    <h1 class="title">Feliz Mesiversario</h1>
+    <div class="names" id="names">Dami & Ian </div>
+    <div class="cta">
+      <button class="btn" id="openLetter">Abrir la carta</button>
+      <button class="btn alt" id="confettiBtn">Lluvia de amor</button>
+      <label class="audio-toggle">
+        <input type="checkbox" id="musicToggle"> Música
+      </label>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="envelope" id="envelope" title="Haz clic para abrir/cerrar">
+      <div class="base"></div>
+      <div class="flap"></div>
+      <div class="stamp"></div>
+    </div>
+
+    <article class="card">
+      <div class="card-head">
+        <div class="date">📅 Desde <span id="sinceTxt">01/08/2024</span> • <span id="monthsTxt">12</span> meses juntos</div>
+        <div class="seal">Amor</div>
+      </div>
+      <div class="letter">
+        <div class="saludo">Mi amor,</div>
+        <div class="paper-lines">
+          <p class="type" id="typewriter"></p>
+        </div>
+        <p class="firma">Con todo mi corazón, <strong id="firma">Dami</strong> ♡</p>
+      </div>
+
+      <div class="timeline" id="timeline">
+        <div class="memory"><h4>Mes 1</h4><small>Primera salida</small><p>Nos juntamos un dia para conocernos y salimos a comprar para comer, y al despedirnos te besé porque me gustabas mucho.</p></div>
+        <div class="memory"><h4>Mes 2</h4><small>Viaje</small><p>Organizamos un viaje porque no aguantamos estar separados mucho tiempo , una ves llego el dia no podia esperar para poder estar con vos y salir a caminar por el pueblo .</p></div>
+        <div class="memory"><h4>Mes 3</h4><small>Foto que amo</small><p>Tu sonrisa se volvió mi lugar seguro.Despues del viaje , cumpleaños y juntadas todos los findes, estoy mas agradecido por tenerte como pareja .  </p></div>
+        <div class="memory"><h4>Mes 4</h4><small></small><p></p></div>
+        <div class="memory"><h4>Mes 5</h4><small></small><p></p></div>
+        <div class="memory"><h4>Mes 6</h4><small></small><p>.</p></div>
+        
+      </div>
+
+      <div class="gallery">
+        <figure class="pic"><img src="fotos/foto 1.jpeg" alt="Nosotros 1"></figure>
+        <figure class="pic"><img src="fotos/foto 2.jpeg" alt="Nosotros 2"></figure>
+        <figure class="pic"><img src="fotos/foto 3.jpeg" alt="Nosotros 3"></figure>
+        <figure class="pic"><img src="fotos/foto 4.jpeg" alt="Nosotros 4"></figure>
+        <figure class="pic"><img src="fotos/foto 5.jpeg" alt="Nosotros 5"></figure>
+        <figure class="pic"><img src="fotos/foto 6.jpeg" alt="Nosotros 6"></figure>
+        <figure class="pic"><img src="fotos/foto 7.jpeg" alt="Nosotros 7"></figure>
+        <figure class="pic"><img src="fotos/Foto 8.jpeg" alt="Nosotros 8"></figure>
+      </div>
+    </article>
+  </section>
+
+  <footer>
+    Hecho con ❤ para nuestro amor. — <span id="year"></span>
+  </footer>
+
+  <audio id="music" loop>
+    <source src="" type="audio/mpeg">
+  </audio>
+
+  <canvas id="confetti" style="position:fixed; inset:0; pointer-events:none; z-index:3; display:none;"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+

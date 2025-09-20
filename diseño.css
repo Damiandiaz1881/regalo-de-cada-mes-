@@ -1,0 +1,77 @@
+/* styles.css */
+:root{
+  --bg:#0f0f14;
+  --ink:#2b2b36;
+  --rose:#ff4d73;
+  --rose-2:#ff8aa6;
+  --gold:#ffd7a3;
+  --paper:#fff7ef;
+  --shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background: radial-gradient(1200px 700px at 80% -10%, rgba(255,77,115,.15), transparent 60%),
+                          radial-gradient(1000px 600px at 10% 110%, rgba(255,138,166,.18), transparent 60%),
+                          var(--bg);
+  color:#1c1b22; font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  overflow-x:hidden;
+}
+
+.hearts{position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden;}
+.heart{position:absolute; width:14px; height:14px; transform: rotate(45deg); opacity:.45; animation: floatUp linear forwards;}
+.heart::before,.heart::after{content:""; position:absolute; width:14px; height:14px; border-radius:50%; background: currentColor;}
+.heart::before{left:-7px}
+.heart::after{top:-7px}
+@keyframes floatUp{from{transform:translateY(110vh) rotate(45deg) scale(.8)} to{transform:translateY(-10vh) rotate(45deg) scale(1.2); opacity:0}}
+
+header{position:relative; z-index:2; padding:32px 20px 60px; text-align:center; color:white; background: linear-gradient(180deg, rgba(15,15,20,.7), rgba(15,15,20,0));}
+.badge{display:inline-flex; gap:.5rem; align-items:center; padding:.4rem .8rem; border:1px solid rgba(255,255,255,.25); border-radius:999px; font-size:.9rem; letter-spacing:.02em; backdrop-filter: blur(6px);}
+.title{margin:18px auto 10px; font-family:'Great Vibes', cursive; font-size: clamp(42px, 7vw, 96px); line-height:1; color:#fff; text-shadow: 0 6px 30px rgba(255,77,115,.3);}
+.names{font-weight:600; color:#ffe7ef; letter-spacing:.08em; text-transform:uppercase}
+
+.cta{display:flex; gap:12px; justify-content:center; margin-top:24px;}
+.btn{appearance:none; border:0; background: linear-gradient(180deg, var(--rose), var(--rose-2)); color:white; font-weight:800; letter-spacing:.06em; padding:14px 22px; border-radius:16px; cursor:pointer; box-shadow: var(--shadow); transition: transform .12s ease, filter .2s ease; position:relative; z-index:2;}
+.btn:hover{transform: translateY(-1px)}
+.btn.alt{background: linear-gradient(180deg, #ffd0a6, #ffc07a); color:#5b3b19}
+
+.section{position:relative; z-index:1; padding:40px 16px; display:grid; place-items:center;}
+.card{max-width: 950px; width:100%; background: var(--paper); border-radius:28px; box-shadow: var(--shadow); overflow:hidden; border:1px solid #f1e3d6;}
+.card-head{position:relative; padding:26px 22px; background:linear-gradient(180deg, #fff3ea, transparent)}
+.date{display:flex; gap:10px; align-items:center; color:#8c6a62; font-weight:600;}
+.seal{position:absolute; right:24px; top:-30px; width:110px; height:110px; border-radius:50%; background: radial-gradient(circle at 35% 35%, #ffb2c2, var(--rose)); color:white; box-shadow: 0 18px 40px rgba(255,77,115,.35); display:grid; place-items:center; font-family:'Great Vibes', cursive; font-size:28px; transform: rotate(-12deg);}
+
+.letter{ padding: 10px 26px 30px; color:#4a3a34; line-height:1.8; }
+.letter .saludo{ font-family:'Great Vibes', cursive; font-size:38px; color:#e54a6e; margin:8px 0 12px;}
+.type{ font-size:1.05rem; min-height: 110px; white-space: pre-wrap; }
+.firma{ margin-top:18px; font-style:italic; color:#6e5248 }
+
+.paper-lines{background-image: repeating-linear-gradient(transparent 0 38px, #f0dcd0 39px 40px); padding: 24px; border-radius: 22px; border: 1px dashed #efd6c7; margin-top: 14px;}
+
+.timeline{display:flex; gap:14px; overflow:auto; padding:18px 10px 26px; scroll-snap-type: x mandatory;}
+.memory{min-width: 260px; background: white; border-radius:20px; border:1px solid #f1e3d6; box-shadow: 0 8px 24px rgba(0,0,0,.05); padding:16px; scroll-snap-align:center}
+.memory h4{margin:0 0 6px; color:#ff5a84}
+.memory small{display:block; color:#7e6a64; margin-bottom:8px}
+.memory p{margin:0; color:#5a4a46}
+
+.gallery{display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:12px; padding: 0 22px 26px}
+.pic{position:relative; border-radius:18px; overflow:hidden; aspect-ratio: 4/5; border:1px solid #f1e3d6}
+.pic img{width:100%; height:100%; object-fit:cover; display:block; filter:saturate(1.05)}
+.pic::after{content:"❤"; position:absolute; right:10px; bottom:8px; font-size:18px; color: rgba(255,77,115,.85); text-shadow:0 4px 10px rgba(0,0,0,.2)}
+
+footer{ text-align:center; color:#cdb8b4; padding:36px 16px 80px }
+
+.envelope{width: 320px; height:220px; position:relative; margin: 10px auto 30px; cursor:pointer; transform: translateZ(0);}
+.envelope .base{position:absolute; inset:0; background: linear-gradient(180deg, #ffe1e9, #ffc5d5); border-radius:12px; box-shadow: var(--shadow)}
+.envelope .flap{position:absolute; left:0; right:0; top:0; height:60%; background: linear-gradient(180deg, #ffc0d1, #ffa3b9); clip-path: polygon(0 0, 100% 0, 50% 100%); transform-origin: top; transition: transform .6s cubic-bezier(.2,.9,.2,1);}
+.envelope.open .flap{ transform: rotateX(160deg) }
+.envelope .stamp{ position:absolute; right:14px; bottom:14px; width:52px; height:52px; background: radial-gradient(circle at 30% 30%, #ffd8e2, #ff99b4); border-radius:8px; box-shadow: 0 6px 16px rgba(255,77,115,.35)}
+
+.audio-toggle{ display:inline-flex; align-items:center; gap:10px; font-weight:600; color:white; border:1px solid rgba(255,255,255,.25); border-radius:999px; padding:.5rem .85rem; backdrop-filter: blur(6px);}
+
+@media (max-width:640px){
+  .seal{display:none}
+  .envelope{transform: scale(.9)}
+  .letter .saludo{font-size:34px}
+}
